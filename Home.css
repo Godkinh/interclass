@@ -488,8 +488,6 @@ body {
 }
 
 
-
-
 /* Fasilitas Section */
 
 .body-fasilitas {
@@ -566,8 +564,8 @@ body {
 
 .slider-wrapper .image-list .image-wrapper {
   width: 325px; 
-  height: 245px;
-  border-radius: 10px;
+  height: 400px;
+  border-radius: 5px;
   cursor: pointer;
   position: relative;
   overflow: hidden;
@@ -762,7 +760,7 @@ body {
 
   .slider-wrapper .image-list .image-item {
     width: 325px;
-    height: 245px;
+    height: 400px;
     object-fit: cover;
   }
 
@@ -891,15 +889,18 @@ body {
     font-size: 45px;
   }
 
+  .swiper-wrapper {
+    display: flex;
+    align-items: stretch; /* samain tinggi semua slide */
+  }
+
   .teacher-card {
-    width: 100%;
-    padding: 56px;
-    border-radius: 12px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-    background-color: #fff;
     display: flex;
     flex-direction: column;
+    justify-content: flex-start; /* isi tetap dari atas */
     align-items: center;
+    height: 100%;   /* isi penuh */
+    min-height: 350px; /* atur sesuai kebutuhan */
   }
 
   .teacher-photo {
@@ -954,4 +955,27 @@ body {
     width: 100%;
   }
 
+}
+
+/* iPhone SE */
+@media (max-width: 375px) {
+  .teacher-card {
+    min-height: 320px;
+    font-size: 14px;
+  }
+}
+
+/* iPhone XR & 12 Pro */
+@media (min-width: 376px) and (max-width: 430px) {
+  .teacher-card {
+    min-height: 350px;
+  }
+}
+
+/* Responsive untuk layar kecil (iPhone SE, XR, 12 Pro) */
+@media (max-width: 480px) {
+  .cta-buttons .btn {
+    padding: 8px 16px;   /* lebih kecil */
+    font-size: 14px;     /* kecilin font */
+  }
 }
